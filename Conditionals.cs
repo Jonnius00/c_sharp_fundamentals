@@ -19,9 +19,10 @@ namespace MoshExercise1_fundamtionals
 
             //          Lists.Exercise5();
 
-            //          Strings.Excercise5();
-            DatesTimes.DatesTimesMain();
-            TimeSpans.TimeSpansMain();
+                      Strings.Excercise1();
+
+            //          DatesTimes.DatesTimesMain();
+            //          TimeSpans.TimeSpansMain();
 
 /* ask a user to enter a number. The number should be between 1 to 10.
 If the user enters a valid number, display "Valid" on the console.

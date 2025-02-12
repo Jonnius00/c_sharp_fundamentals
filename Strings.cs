@@ -20,16 +20,18 @@ display a message: "Consecutive"; otherwise, display "Not Consecutive". */
                 numbers.Add(Convert.ToInt32(num));
             numbers.Sort();
 
-            var isConsecutive = true;
-            for (var i=1; i<numbers.Count; i++)   // starts from 2.position
-            {
-                if (numbers[i] != numbers[i-1]+1) // the simplest consequence
-                {                              // current differs from prev by 1
-                    isConsecutive = false; break; }
-            }
-
-            var message = "numbers are " + (isConsecutive ? "Consecutive" : "Non-consecutive");
+            var message = "numbers are " + (IsConsecutive(numbers) ? "Consecutive" : "Non-consecutive");
             Console.WriteLine(message);
+        }
+        public static bool IsConsecutive(List<int> numbers) {
+            var isConsecutive = true;
+            for (var i = 1; i < numbers.Count; i++)   // starts from 2.position
+            {   if (numbers[i] != numbers[i - 1] + 1) // the simplest consequence
+                {                              // current differs from prev by 1
+                    isConsecutive = false; break;
+                }
+            }
+            return isConsecutive;
         }
 
 /* Ask user to enter a few numbers separated by a hyphen.
@@ -107,10 +109,10 @@ IF no words provided in the input, print out an error "Error" */
             Console.WriteLine($"result => {variableName}");
         }
 
-/* Ask user to enter an English word. Count the number of vowels in the word. 
-If user enters "Inadequate" - the code should display 6 on the console.
-Make sure the program calculates number of vowels irrespective of case of the word.
-(eg "Inadequate", "inadequate" and "INADEQUATE" all include 6 vowels). */
+        /* Ask user to enter an English word. Count the number of vowels (a, e, o, u, i) in the word. 
+        If user enters "Inadequate" - the code should display 6 on the console.
+        Make sure the program calculates number of vowels irrespective of case of the word.
+        (eg "Inadequate", "inadequate" and "INADEQUATE" all include 6 vowels). */
         public static void Excercise5()
         {
             Console.WriteLine("Counting vowels.\nEnter a word: ");
